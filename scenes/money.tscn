@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2i31ucktnkk3"]
+[gd_scene format=3 uid="uid://d2i31ucktnkk3"]
 
 [ext_resource type="Script" uid="uid://nsjtc7mqduu3" path="res://scripts/money.gd" id="1_v42d4"]
 
@@ -6,13 +6,13 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dia0j"]
 
-[node name="Money" type="RigidBody2D"]
+[node name="Money" type="RigidBody2D" unique_id=1656587016]
 script = ExtResource("1_v42d4")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1294633706]
 position = Vector2(0, 2.861023e-06)
 scale = Vector2(20.022678, 20.02268)
 mesh = SubResource("SphereMesh_v42d4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=523827055]
 shape = SubResource("CircleShape2D_dia0j")

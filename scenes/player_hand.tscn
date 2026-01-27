@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b2c5s08bjvmmm"]
+
+[ext_resource type="Script" uid="uid://xwk1xv4jfm40" path="res://scripts/player_hand.gd" id="1_4moqc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_707nr"]
+radius = 55.226807
+
+[node name="PlayerHand" type="Area2D" unique_id=1164663404 groups=["player"]]
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector2(0, -2)
+gravity_direction = Vector2(0, -2)
+gravity = 150.0
+linear_damp_space_override = 1
+linear_damp = 0.5
+script = ExtResource("1_4moqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=865968992]
+shape = SubResource("CircleShape2D_707nr")
+debug_color = Color(0.6427822, 0.5239042, 0, 0.41960785)
