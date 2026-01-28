@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://ddhdludltefs1"]
 
 [ext_resource type="PackedScene" uid="uid://dhppoqtx3jupm" path="res://scenes/piggy.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://4o063lcqi0a1" path="res://scripts/session_manager.gd" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://duhfwfnwjubex" path="res://scripts/money_spawner.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d2i31ucktnkk3" path="res://scenes/money.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b2c5s08bjvmmm" path="res://scenes/player_hand.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c5vuuwvrex2i6" path="res://scenes/player_pouch.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=2010253684]
 
 [node name="SessionManager" type="Node" parent="." unique_id=1896341686]
+script = ExtResource("1_tefeu")
+
+[node name="RunTimer" type="Timer" parent="SessionManager" unique_id=127053875]
+wait_time = 30.0
 
 [node name="Piggy" parent="." unique_id=1444068199 instance=ExtResource("1_0wfyh")]
 
@@ -17,10 +23,15 @@ script = ExtResource("2_jyhfs")
 money_scene = ExtResource("2_sugp2")
 
 [node name="Timer" type="Timer" parent="MoneySpawner" unique_id=1633765040]
-wait_time = 2.0
-autostart = true
+wait_time = 0.5
+
+[node name="Money" type="Node2D" parent="MoneySpawner" unique_id=333131147]
 
 [node name="PlayerHand" parent="." unique_id=1164663404 instance=ExtResource("4_jyhfs")]
 position = Vector2(525, 348)
 
+[node name="PlayerPouch" parent="." unique_id=295891638 instance=ExtResource("5_tbgi4")]
+position = Vector2(960, 540)
+
+[connection signal="timeout" from="SessionManager/RunTimer" to="SessionManager" method="_on_run_timer_timeout"]
 [connection signal="timeout" from="MoneySpawner/Timer" to="MoneySpawner" method="spawn_money"]

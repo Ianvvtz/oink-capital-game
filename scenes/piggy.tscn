@@ -1,30 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhppoqtx3jupm"]
+[gd_scene format=3 uid="uid://dhppoqtx3jupm"]
 
 [ext_resource type="Texture2D" uid="uid://ybio5lkfje3x" path="res://icon.svg" id="1_00wcf"]
+[ext_resource type="Script" uid="uid://oog0vwkc81iy" path="res://scripts/piggy.gd" id="1_am0m5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am0m5"]
 radius = 1130.004
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_00wcf"]
-radius = 93.05912
+radius = 69.065186
 
-[node name="Piggy" type="StaticBody2D" groups=["pig"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ow6q2"]
+radius = 115.62439
 
-[node name="GravityField" type="Area2D" parent="."]
+[node name="Piggy" type="StaticBody2D" unique_id=1282141553 groups=["pig"]]
+script = ExtResource("1_am0m5")
+
+[node name="GravityField" type="Area2D" parent="." unique_id=1740036031]
+collision_mask = 2
 gravity_space_override = 3
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
-gravity = 100.0
+gravity = 200.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityField" unique_id=552739103]
 shape = SubResource("CircleShape2D_am0m5")
 debug_color = Color(0.99999994, 0.018608239, 0.006154383, 0.41960785)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2079545518]
+scale = Vector2(1.09375, 1.09375)
 texture = ExtResource("1_00wcf")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=533256911]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247857677]
 shape = SubResource("CircleShape2D_00wcf")
+
+[node name="PigGrabArea" type="Area2D" parent="." unique_id=1532174597]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PigGrabArea" unique_id=901274950]
+shape = SubResource("CircleShape2D_ow6q2")
+debug_color = Color(2.8878452e-07, 0.6405853, 0.35239682, 0.41960785)
+
+[connection signal="body_entered" from="PigGrabArea" to="." method="_on_pig_grab_area_body_entered"]

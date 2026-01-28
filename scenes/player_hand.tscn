@@ -6,15 +6,35 @@
 radius = 55.226807
 
 [node name="PlayerHand" type="Area2D" unique_id=1164663404 groups=["player"]]
-gravity_space_override = 3
+collision_layer = 8
+collision_mask = 2
+gravity_space_override = 2
 gravity_point = true
-gravity_point_center = Vector2(0, -2)
-gravity_direction = Vector2(0, -2)
-gravity = 150.0
-linear_damp_space_override = 1
-linear_damp = 0.5
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 0.0
 script = ExtResource("1_4moqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=865968992]
 shape = SubResource("CircleShape2D_707nr")
 debug_color = Color(0.6427822, 0.5239042, 0, 0.41960785)
+
+[node name="MoneyCounter" type="Label" parent="." unique_id=543308124]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -79.0
+offset_right = 20.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
