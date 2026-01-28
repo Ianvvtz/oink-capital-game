@@ -6,7 +6,8 @@ extends Node
 @onready var player_pouch: Area2D = $"../PlayerPouch"
 @onready var piggy: StaticBody2D = $"../Piggy"
 
-
+@export var run_time: float = 20.0
+var current_run: int = 1
 var player_money: int = 0
 
 
@@ -31,4 +32,4 @@ func end_run() -> void:
 
 func start_run() -> void:
 	money_spawner.start_spawns()
-	run_timer.start(30.0)
+	run_timer.start(1.0 + run_time)

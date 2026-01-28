@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://b2c5s08bjvmmm" path="res://scenes/player_hand.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c5vuuwvrex2i6" path="res://scenes/player_pouch.tscn" id="5_tbgi4"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tefeu"]
+
 [node name="Main" type="Node2D" unique_id=2010253684]
 
 [node name="SessionManager" type="Node" parent="." unique_id=1896341686]
 script = ExtResource("1_tefeu")
 
 [node name="RunTimer" type="Timer" parent="SessionManager" unique_id=127053875]
-wait_time = 30.0
 
 [node name="Piggy" parent="." unique_id=1444068199 instance=ExtResource("1_0wfyh")]
 
@@ -23,7 +24,6 @@ script = ExtResource("2_jyhfs")
 money_scene = ExtResource("2_sugp2")
 
 [node name="Timer" type="Timer" parent="MoneySpawner" unique_id=1633765040]
-wait_time = 0.5
 
 [node name="Money" type="Node2D" parent="MoneySpawner" unique_id=333131147]
 
@@ -32,6 +32,30 @@ position = Vector2(525, 348)
 
 [node name="PlayerPouch" parent="." unique_id=295891638 instance=ExtResource("5_tbgi4")]
 position = Vector2(960, 540)
+
+[node name="Borders" type="StaticBody2D" parent="." unique_id=252400899]
+collision_mask = 3
+
+[node name="BottomBorder" type="CollisionShape2D" parent="Borders" unique_id=569710322]
+position = Vector2(0, 548)
+shape = SubResource("WorldBoundaryShape2D_tefeu")
+
+[node name="LeftBorder" type="CollisionShape2D" parent="Borders" unique_id=1656276337]
+position = Vector2(-968, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_tefeu")
+
+[node name="TopBorder" type="CollisionShape2D" parent="Borders" unique_id=713634292]
+position = Vector2(0, -549)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_tefeu")
+
+[node name="RightBorder" type="CollisionShape2D" parent="Borders" unique_id=1940691386]
+position = Vector2(968, 0)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_tefeu")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=24108341]
 
 [connection signal="timeout" from="SessionManager/RunTimer" to="SessionManager" method="_on_run_timer_timeout"]
 [connection signal="timeout" from="MoneySpawner/Timer" to="MoneySpawner" method="spawn_money"]

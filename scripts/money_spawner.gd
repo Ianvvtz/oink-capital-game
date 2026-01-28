@@ -6,7 +6,7 @@ extends Node2D
 
 
 @export var money_scene: PackedScene
-@export var time_between_spawns: float = 0.5
+@export var time_between_spawns: float = 1.0
 
 var valuespawned: int = 0
 
