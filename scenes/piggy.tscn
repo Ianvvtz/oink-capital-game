@@ -10,7 +10,7 @@ radius = 1130.004
 radius = 69.065186
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow6q2"]
-radius = 115.62439
+radius = 100.0
 
 [node name="Piggy" type="StaticBody2D" unique_id=1282141553 groups=["pig"]]
 script = ExtResource("1_am0m5")

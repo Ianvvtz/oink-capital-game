@@ -1,11 +1,16 @@
 extends StaticBody2D
 
 
+@onready var pig_grab_area: Area2D = $PigGrabArea
+@onready var area_shape: CollisionShape2D = $PigGrabArea/CollisionShape2D
+
+var base_size = 100.0
 var pig_money_count: int = 0
 
 
 func add_money(amount) -> void:
 	pig_money_count += amount
+	area_shape.shape.radius += amount
 	print(pig_money_count)
 
 
