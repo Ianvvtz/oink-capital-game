@@ -18,10 +18,8 @@ func _ready() -> void:
 func toggle_gravity(tf: bool) -> void:
 	if tf == true:
 		monitoring = true
-		#set_gravity_space_override_mode(SPACE_OVERRIDE_COMBINE_REPLACE)
 	elif tf == false:
 		monitoring = false
-		#set_gravity_space_override_mode(SPACE_OVERRIDE_DISABLED)
 
 
 func _process(_delta: float) -> void:
@@ -41,6 +39,7 @@ func _on_body_entered(body: Node2D) -> void:
 		money_held += 1
 		print(money_held, "/", max_money_hold)
 		body.grab()
+		body.particles.emitting = false
 		amount_held += body.value
 		set_text(true)
 	else:
@@ -53,6 +52,7 @@ func _on_body_exited(body: Node2D) -> void:
 		money_held -= 1
 		amount_held -= body.value
 		body.in_hand = false
+		body.particles.emitting = true
 		if money_held == 0:
 			set_text(false)
 

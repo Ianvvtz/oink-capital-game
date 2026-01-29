@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://4o063lcqi0a1" path="res://scripts/session_manager.gd" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://duhfwfnwjubex" path="res://scripts/money_spawner.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b2c5s08bjvmmm" path="res://scenes/player_hand.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://d2i31ucktnkk3" path="res://scenes/money scenes/money_coin.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://tl6dbgm1wjkr" path="res://scenes/money scenes/money_bar_100.tscn" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://c5vuuwvrex2i6" path="res://scenes/player_pouch.tscn" id="5_tbgi4"]
 [ext_resource type="Script" uid="uid://f5hnfn1sagww" path="res://scripts/ui_controller.gd" id="7_o6xl0"]
 
@@ -22,7 +22,7 @@ script = ExtResource("1_tefeu")
 [node name="MoneySpawner" type="Node2D" parent="." unique_id=1924332394]
 position = Vector2(0, -540)
 script = ExtResource("2_jyhfs")
-money_coin_scene = ExtResource("4_tefeu")
+money_coin_scene = ExtResource("4_o6xl0")
 
 [node name="Timer" type="Timer" parent="MoneySpawner" unique_id=1633765040]
 
@@ -107,7 +107,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 max_value = 1.0
-value = 0.01
 show_percentage = false
 
 [node name="PigBar" type="ProgressBar" parent="UI/Control/HBoxContainer/Control" unique_id=1367110783]
@@ -127,7 +126,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 max_value = 1.0
-value = 0.01
 fill_mode = 1
 show_percentage = false
 

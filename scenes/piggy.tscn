@@ -9,6 +9,8 @@ radius = 1130.004
 [sub_resource type="CircleShape2D" id="CircleShape2D_00wcf"]
 radius = 69.065186
 
+[sub_resource type="SphereMesh" id="SphereMesh_am0m5"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow6q2"]
 radius = 90.0
 
@@ -39,6 +41,12 @@ shape = SubResource("CircleShape2D_00wcf")
 [node name="PigGrabArea" type="Area2D" parent="." unique_id=1532174597]
 collision_layer = 4
 collision_mask = 2
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="PigGrabArea" unique_id=190129761]
+modulate = Color(0, 0, 0, 0.11764706)
+position = Vector2(0, 2.0995976e-05)
+scale = Vector2(180, 180)
+mesh = SubResource("SphereMesh_am0m5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PigGrabArea" unique_id=901274950]
 shape = SubResource("CircleShape2D_ow6q2")

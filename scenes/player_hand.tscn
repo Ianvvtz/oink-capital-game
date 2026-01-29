@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2c5s08bjvmmm"]
 
 [ext_resource type="Script" uid="uid://xwk1xv4jfm40" path="res://scripts/player_hand.gd" id="1_4moqc"]
-[ext_resource type="Shader" uid="uid://dilu22yvnc66g" path="res://scenes/player_hand.gdshader" id="2_b5n6t"]
+[ext_resource type="Shader" uid="uid://dilu22yvnc66g" path="res://assets/others/player_hand.gdshader" id="2_b5n6t"]
 [ext_resource type="Texture2D" uid="uid://cnqydgurjobuo" path="res://assets/images/money/1 dollar coin.png" id="3_e6atq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_707nr"]

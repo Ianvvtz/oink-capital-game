@@ -1,6 +1,9 @@
 extends RigidBody2D
 
 
+@onready var particles: GPUParticles2D = $GPUParticles2D
+
+
 @export var value: int = 1
 var pig: Node2D
 var in_hand: bool = false
@@ -20,6 +23,7 @@ func _ready() -> void:
 		orbit_speed *= -1
 	var tangential = dir.rotated(PI / 2).normalized() * orbit_speed
 	linear_velocity = tangential
+	angular_velocity = randf_range(-3, 3)
 
 
 func grab() -> void:

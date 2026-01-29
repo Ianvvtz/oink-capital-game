@@ -3,14 +3,29 @@
 [ext_resource type="Script" uid="uid://nsjtc7mqduu3" path="res://scripts/money.gd" id="1_ucrp5"]
 [ext_resource type="Texture2D" uid="uid://tpfg4c7c3woh" path="res://assets/images/money/10 dollar bill.png" id="2_ucrp5"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ucrp5"]
+particle_flag_align_y = true
+gravity = Vector3(0, 98, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+color = Color(1, 1, 1, 0.09803922)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecm27"]
 size = Vector2(40, 24)
 
 [node name="Money" type="RigidBody2D" unique_id=1656587016]
 collision_layer = 2
 collision_mask = 29
+mass = 0.1
 script = ExtResource("1_ucrp5")
 value = 10
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1130350822]
+amount = 50
+texture = ExtResource("2_ucrp5")
+lifetime = 0.2
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_ucrp5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216973679]
 scale = Vector2(0.2, 0.2)
