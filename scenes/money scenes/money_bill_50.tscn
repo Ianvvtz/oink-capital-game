@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dg35co7na45jo"]
+
+[ext_resource type="Script" uid="uid://nsjtc7mqduu3" path="res://scripts/money.gd" id="1_0kpyy"]
+[ext_resource type="Texture2D" uid="uid://dhikbbch0cccp" path="res://assets/images/money/50 dollar bill.png" id="2_0kpyy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecm27"]
+size = Vector2(40, 24)
+
+[node name="Money" type="RigidBody2D" unique_id=1656587016]
+collision_layer = 2
+collision_mask = 29
+script = ExtResource("1_0kpyy")
+value = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216973679]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0kpyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=523827055]
+shape = SubResource("RectangleShape2D_ecm27")

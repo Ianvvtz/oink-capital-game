@@ -5,8 +5,8 @@ extends Node2D
 @onready var money: Node2D = $Money
 
 
-@export var money_scene: PackedScene
-@export var time_between_spawns: float = 1.0
+@export var money_coin_scene: PackedScene
+@export var time_between_spawns: float = 0.5
 
 var valuespawned: int = 0
 
@@ -16,11 +16,12 @@ func _ready() -> void:
 
 
 func spawn_money() -> void:
-	var new_money = money_scene.instantiate()
+	var new_money = money_coin_scene.instantiate()
 	var spawn_location = global_position
 	money.call_deferred("add_child", new_money)
 	valuespawned += new_money.value
 	new_money.call_deferred("set_global_position", spawn_location)
+	Signalbus.money_spawned.emit()
 
 
 func _on_money_removed(_child) -> void:

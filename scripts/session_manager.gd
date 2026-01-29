@@ -21,6 +21,7 @@ func _on_run_timer_timeout() -> void:
 
 
 func end_run() -> void:
+	print_stack()
 	player_money = player_pouch.money_count
 	print("Total spawned: ", money_spawner.valuespawned)
 	print("Player money: ", player_money)
@@ -32,4 +33,4 @@ func end_run() -> void:
 
 func start_run() -> void:
 	money_spawner.start_spawns()
-	run_timer.start(1.0 + run_time)
+	run_timer.start(run_time)

@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 
-var value: int = 1
+@export var value: int = 1
 var pig: Node2D
 var in_hand: bool = false
 var hand_offset: Vector2
@@ -32,7 +32,7 @@ func grab() -> void:
 
 func _process(delta: float) -> void:
 	if in_hand:
-		grab_transition = min(grab_transition + delta * 3.0, 1.0)
+		grab_transition = min(grab_transition + delta * 3.0, 3.0)
 		var target = get_global_mouse_position() + hand_offset
 		var lerp_speed = lerp(0.1, 0.4, grab_transition)
 		global_position = lerp(global_position, target, lerp_speed)

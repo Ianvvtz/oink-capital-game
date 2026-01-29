@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhppoqtx3jupm"]
 
-[ext_resource type="Texture2D" uid="uid://ybio5lkfje3x" path="res://icon.svg" id="1_00wcf"]
 [ext_resource type="Script" uid="uid://oog0vwkc81iy" path="res://scripts/piggy.gd" id="1_am0m5"]
+[ext_resource type="Texture2D" uid="uid://wnwchnmu2dhx" path="res://assets/images/piggytophat.png" id="2_am0m5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_am0m5"]
 radius = 1130.004
@@ -10,7 +10,7 @@ radius = 1130.004
 radius = 69.065186
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow6q2"]
-radius = 100.0
+radius = 90.0
 
 [node name="Piggy" type="StaticBody2D" unique_id=1282141553 groups=["pig"]]
 script = ExtResource("1_am0m5")
@@ -28,8 +28,8 @@ shape = SubResource("CircleShape2D_am0m5")
 debug_color = Color(0.99999994, 0.018608239, 0.006154383, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2079545518]
-scale = Vector2(1.09375, 1.09375)
-texture = ExtResource("1_00wcf")
+scale = Vector2(0.4, 0.3)
+texture = ExtResource("2_am0m5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=533256911]
 
