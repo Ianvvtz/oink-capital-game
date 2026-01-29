@@ -52,6 +52,7 @@ func _on_body_exited(body: Node2D) -> void:
 		money_held -= 1
 		amount_held -= body.value
 		body.in_hand = false
+		set_deferred("freeze", false)
 		body.particles.emitting = true
 		if money_held == 0:
 			set_text(false)

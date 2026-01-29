@@ -6,12 +6,12 @@
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0kpyy"]
 particle_flag_align_y = true
 gravity = Vector3(0, 98, 0)
-scale_min = 0.19999999
-scale_max = 0.19999999
-color = Color(1, 1, 1, 0.09803922)
+scale_min = 0.29999998
+scale_max = 0.29999998
+color = Color(1, 1, 1, 0.05882353)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecm27"]
-size = Vector2(40, 24)
+size = Vector2(60, 36)
 
 [node name="Money" type="RigidBody2D" unique_id=1656587016]
 collision_layer = 2
@@ -28,7 +28,7 @@ trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_0kpyy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216973679]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_0kpyy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=523827055]

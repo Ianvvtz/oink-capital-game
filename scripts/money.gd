@@ -29,12 +29,13 @@ func _ready() -> void:
 func grab() -> void:
 	in_hand = true
 	grab_transition = 0.0
+	set_deferred("FreezeMode", RigidBody2D.FREEZE_MODE_KINEMATIC)
 	var angle = randf() * TAU
 	var distance = randf_range(10, 30)
 	hand_offset = Vector2(cos(angle), sin(angle)) * distance
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if in_hand:
 		grab_transition = min(grab_transition + delta * 3.0, 3.0)
 		var target = get_global_mouse_position() + hand_offset

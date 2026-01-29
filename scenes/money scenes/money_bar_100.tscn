@@ -8,7 +8,7 @@ particle_flag_align_y = true
 gravity = Vector3(0, 98, 0)
 scale_min = 0.19999999
 scale_max = 0.19999999
-color = Color(1, 1, 1, 0.09803922)
+color = Color(1, 1, 1, 0.05882353)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecm27"]
 size = Vector2(54, 22)
