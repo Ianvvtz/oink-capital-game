@@ -20,7 +20,7 @@ noise_type = 3
 frequency = 0.05
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a8y0u"]
-width = 1920
+width = 1080
 height = 1080
 noise = SubResource("FastNoiseLite_trceg")
 
@@ -41,7 +41,7 @@ texture = ExtResource("1_trceg")
 [node name="VortextSprite" type="Sprite2D" parent="." unique_id=918126991]
 modulate = Color(1, 1, 1, 0.039215688)
 position = Vector2(-1.6242266e-05, -9.059906e-06)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = SubResource("NoiseTexture2D_a8y0u")
 script = ExtResource("2_a8y0u")
 

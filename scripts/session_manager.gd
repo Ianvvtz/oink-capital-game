@@ -41,6 +41,7 @@ func end_run() -> void:
 
 
 func reset_run() -> void:
+	piggy.reset_pig()
 	money_spawner.valuespawned = 0
 	player_pouch.money_count = 0
 	piggy.pig_money_count = 0

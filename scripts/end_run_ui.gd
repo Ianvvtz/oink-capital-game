@@ -36,6 +36,7 @@ func set_failed_run() -> void:
 
 
 func _on_retry_button_pressed() -> void:
+	session_manager.current_run = 1
 	session_manager.reset_run()
 	set_run_ui(false)
 
